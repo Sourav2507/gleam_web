@@ -2,7 +2,7 @@ from flask import Flask,Blueprint,redirect,url_for
 from routes import admin,customer,seller,auth,general,deadend
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../frontend/html',static_folder='../frontend')
 
 app.register_blueprint(admin.admin,url_prefix='/admin')
 app.register_blueprint(customer.customer,url_prefix='/customer')
